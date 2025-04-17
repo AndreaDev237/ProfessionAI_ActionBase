@@ -1,0 +1,28 @@
+{
+    "name": "github-actions-demo",
+    "version": "1.0.0",
+    "description": "Demo di GitHub Actions per corso di Web Deployment",
+    "main": "index.html",
+    "scripts": {
+      "lint": "eslint js/",
+      "minify:css": "cleancss -o dist/css/style.min.css css/style.css",
+      "minify:js": "terser js/script.js -o dist/js/script.min.js",
+      "minify:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --input-dir ./ --output-dir dist/ --file-ext html",
+      "build": "mkdir -p dist/css dist/js && npm run minify:css && npm run minify:js && npm run minify:html"
+    },
+    "keywords": [
+      "github-actions",
+      "deploy",
+      "demo",
+      "static",
+      "website"
+    ],
+    "author": "Corso Web Deployment",
+    "license": "MIT",
+    "devDependencies": {
+      "clean-css-cli": "^5.6.2",
+      "eslint": "^8.40.0",
+      "html-minifier": "^4.0.0",
+      "terser": "^5.17.3"
+    }
+  }
